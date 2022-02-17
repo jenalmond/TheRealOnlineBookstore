@@ -1,0 +1,26 @@
+﻿
+@{
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style>
+        #grad {
+            height: 500px;
+            background-color: blue; /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, #c5eefd, #c5fde4);
+        }
+    </style>
+    @*<link href="~/lib/css/bootstrap-grid.css" rel="stylesheet" />*@
+</head>
+<body id="grad">
+    <div>
+        @RenderBody()
+    </div>
+    <footer></footer>
+</body>
+
+</html>
