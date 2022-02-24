@@ -3,41 +3,11 @@
 }
 @model BooksViewModel
 
-<h1 style="text-align:center"><cite>The Online Bookstore</cite></h1>
 @foreach (Book b in Model.Books)
 {
-<div style="border:purple; border-width:5px; border-style:solid;">
-    <h2 style="text-align:center">@b.Title</h2>
-    <h3 style="text-align:center">@b.Author</h3>
-    <table style="margin-left:auto;margin-right:auto;">
-        <tr>
-            <td>
-                <ul>
-                    <li>Publisher: @b.Publisher</li>
-                    <li>ISBN: @b.Isbn</li>
-                </ul>
-            </td>
-            <td>
-                <ul>
-                    <li>Classification: @b.Classification</li>
-                    <li>Category: @b.Category</li>
-                </ul>
-            </td>
-            <td>
-                <ul>
-                    <li>Pages: @b.PageCount</li>
-                    <li>Price: @b.Price</li>
-                </ul>
-            </td>
-        </tr>
-    </table>
-</div>
-<br />
+    <partial name="BookSummary" model="b" />
 }
 
-@*<div page-model="@Model.PageInfo" page-action="Index" page-class="btn"
-     page-class-normal="btn-outline-dark" page-class-selected="btn-primary" page-class-enabled=true
-     class="btn-group pull-right m-5"></div>*@
 <div page-model="@Model.PageInfo" page-action="Index" page-classes-enabled="true"
      page-class="btn" page-class-normal="btn-outline-dark"
      page-class-selected="btn-primary" class="btn-group pull-right m-1"></div>

@@ -7,20 +7,22 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <style>
-        #grad {
-            height: 500px;
-            background-color: blue; /* For browsers that do not support gradients */
-            background-image: linear-gradient(to right, #c5eefd, #c5fde4);
-        }
-    </style>
-    @*<link href="~/lib/css/bootstrap-grid.css" rel="stylesheet" />*@
+    <link href="~/lib/css/bootstrap.css" rel="stylesheet" />
+    
 </head>
-<body id="grad">
-    <div>
-        @RenderBody()
+<body>
+    <div class="bg-dark text-white p-2">
+        <span class="navbar-brand m-lg-2">Online Book Store</span>
     </div>
-    <footer>This is a test branch commit/push</footer>
+    <div class="row m-1 p-1">
+        <div id="types" class="col-3"></div>
+        <div class="col-9">
+            <div>
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <footer></footer>
 </body>
 
 </html>
