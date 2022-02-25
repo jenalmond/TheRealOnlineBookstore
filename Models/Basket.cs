@@ -31,7 +31,7 @@ namespace OnlineBookstore.Models
         }
         public double CalculateTotal()
         {
-            double sum = Items.Sum(x => x.Quantity * 10);
+            double sum = Items.Sum(x => x.Quantity * x.Book.Price);
             //.Where(x => x.Book.BookId == bk.BookId;
             return sum;
         }
