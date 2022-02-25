@@ -29,7 +29,8 @@ namespace OnlineBookstore.Controllers
 
                 PageInfo = new PageInfo
                 {
-                    TotalNumBooks = repo.Books.Count(),
+                    TotalNumBooks = (bookCategory == null ? repo.Books.Count()
+                                    : repo.Books.Where(x => x.Category == bookCategory).Count()),
                     BooksPerPage = pageSize,
                     CurrentPage = pageNum
                 }

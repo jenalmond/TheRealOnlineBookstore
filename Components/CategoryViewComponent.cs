@@ -17,6 +17,8 @@ namespace OnlineBookstore.Components
 
         public IViewComponentResult Invoke()
         {
+            ViewBag.SelectedCategory = RouteData?.Values["bookCategory"];
+
             var types = repo.Books
                 .Select(x => x.Category)
                 .Distinct()

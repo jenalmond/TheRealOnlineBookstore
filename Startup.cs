@@ -48,15 +48,16 @@ namespace OnlineBookstore
                     "categorypage",
                     "{bookCategory}/Page{pageNum}",
                     new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute(
+                name: "Paging",
+                pattern: "Page{pageNum}",
+                defaults: new { Controller = "Home", action = "Index", pageNum = 1 });
+
                 endpoints.MapControllerRoute(
                     "category",
                     "{bookCategory}",
                     new { Controller = "Home", action = "Index", pageNum = 1 });
-
-                endpoints.MapControllerRoute(
-                    name: "Paging",
-                    pattern: "Page{pageNum}",
-                    defaults: new { Controller = "Home", action = "Index" });
 
                 endpoints.MapDefaultControllerRoute();
             });
