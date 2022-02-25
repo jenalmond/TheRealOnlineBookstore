@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace OnlineBookstore.Components
 {
-    public class ClassificationViewComponent : ViewComponent
+    public class CategoryViewComponent : ViewComponent
     {
         private IOnlineBookstoreRepository repo { get; set; }
-        public  ClassificationViewComponent (IOnlineBookstoreRepository temp)
+        public  CategoryViewComponent (IOnlineBookstoreRepository temp)
         {
             repo = temp;
         }
@@ -18,7 +18,7 @@ namespace OnlineBookstore.Components
         public IViewComponentResult Invoke()
         {
             var types = repo.Books
-                .Select(x => x.Classification)
+                .Select(x => x.Category)
                 .Distinct()
                 .OrderBy(x => x);
             return View(types);
