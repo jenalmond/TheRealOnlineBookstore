@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -33,7 +34,7 @@ namespace OnlineBookstore.Models
         {
             Items.RemoveAll(x => x.Book.BookId == bk.BookId);
         }
-        public virtual void ClearBasket(Book bk)
+        public virtual void ClearBasket()
         {
             Items.Clear();
         }
@@ -48,6 +49,7 @@ namespace OnlineBookstore.Models
 
     public class BasketLineItem
     {
+        [Key]
         public int LineID { get; set; }
         public Book Book { get; set; }
         public int Quantity { get; set; }

@@ -30,9 +30,9 @@ namespace OnlineBookstore.Models
             base.RemoveItem(bk);
             Session.SetJson("Basket", this);
         }
-        public override void ClearBasket(Book bk)
+        public override void ClearBasket()
         {
-            base.ClearBasket(bk);
+            base.ClearBasket();
             Session.Remove("Basket");
         }
     }

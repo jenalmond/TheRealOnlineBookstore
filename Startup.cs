@@ -30,7 +30,7 @@ namespace OnlineBookstore
                 options.UseSqlite(Configuration["ConnectionStrings:BookDBConnection"]);
             });
             services.AddScoped<IOnlineBookstoreRepository, EFOnlineBookstoreRepository>();
-            
+            services.AddScoped<ITransactionRepository, EFTransactionRepository>();
             services.AddRazorPages();
             services.AddDistributedMemoryCache();
             services.AddSession();
