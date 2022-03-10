@@ -10,8 +10,7 @@
 <EditForm Model="b" OnValidSubmit="SaveBook">
 
     <DataAnnotationsValidator></DataAnnotationsValidator>
-    @if (b.BookId != 0)
-    {
+
         <div class="form-group">
             <label>Book Id</label>
             <input class="form-control" disabled value="@b.BookId" />
@@ -59,7 +58,7 @@
 
         <button type="submit" class="btn btn-@ThemeColor">Save</button>
         <NavLink class="btn btn-secondary" href="/admin/books">Cancel</NavLink>
-    }
+    
 </EditForm>
 
 @code {
