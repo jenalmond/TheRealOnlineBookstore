@@ -11,10 +11,11 @@
     <title>Online Bookstore Admin</title>
     <link href="~/lib/css/bootstrap.css" rel="stylesheet" />
     <base href="/" />
+    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
 </head>
 
 <body>
-    <component type="typeof(OnlineBookstore.Pages.Admin.Routed)" render-mode="ServerPrerendered" />
-    <script scr="/_framework/blazor.server.js"></script>
+    <component type="typeof(OnlineBookstore.Pages.Admin.Routed)" render-mode="Server" />
+    <script src="_framework/blazor.server.js"></script>
 </body>
 </html>

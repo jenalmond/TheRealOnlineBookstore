@@ -27,6 +27,7 @@ namespace OnlineBookstore.Models
 
         public void DeleteBook(Book b)
         {
+
             context.Remove(b);
             context.SaveChanges();
         }

@@ -309,8 +309,11 @@ caption {
 }
 
 th {
-  text-align: inherit;
-  text-align: -webkit-match-parent;
+    text-align: inherit;
+    text-align: -webkit-match-parent;
+    position: sticky;
+    top: 0;
+
 }
 
 thead,
@@ -323,7 +326,9 @@ th {
   border-style: solid;
   border-width: 0;
 }
-
+thead {
+    background-color: white;
+}
 label {
   display: inline-block;
 }
