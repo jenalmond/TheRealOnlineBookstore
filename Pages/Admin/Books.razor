@@ -13,29 +13,29 @@
         @if (BookData?.Count() > 0)
         {
             @foreach (Book b in BookData)
-                {
-        <tr>
-            <td>@b.BookId</td>
-            <td>@b.Title</td>
-            <td>@b.Author</td>
-            <td>
-                <NavLink class="btn btn-info btn-sm" href="@GetDetailsUrl(b.BookId)">Details</NavLink>
-            </td>
-            <td>
-                <NavLink class="btn btn-warning btn-sm" href="@GetEditUrl(b.BookId)">Edit</NavLink>
-            </td>
-            <td>
-                <button class="btn btn-danger btn-sm" @onclick="@(x => RemoveBook(b))"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
-            </td>
-        </tr>
-                }
+            {
+                <tr>
+                    <td>@b.BookId</td>
+                    <td>@b.Title</td>
+                    <td>@b.Author</td>
+                    <td>
+                        <NavLink class="btn btn-info btn-sm" href="@GetDetailsUrl(b.BookId)">Details</NavLink>
+                    </td>
+                    <td>
+                        <NavLink class="btn btn-warning btn-sm" href="@GetEditUrl(b.BookId)">Edit</NavLink>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" @onclick="@(x => RemoveBook(b))"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+                    </td>
+                </tr>
+            }
         }
         else
-            {
+        {
             <tr>
                 <td colspan="5" class="text-center">No Books</td>
             </tr>
-            }
+        }
     </tbody>
 </table>
 <NavLink class="btn btn-primary" href="/admin/books/create">Add Book</NavLink>

@@ -83,6 +83,8 @@ namespace OnlineBookstore
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/admin/{*catchall}", "/admin/index");
             });
+
+            IdentitySeedData.EnsurePopulated(app);
         }
     }
 }
